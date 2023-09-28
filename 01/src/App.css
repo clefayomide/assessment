@@ -8,6 +8,7 @@
 	/* align-items: center; */
 	letter-spacing: 1px;
 	padding: 20px;
+	position: relative;
 }
 
 @media all and (min-width: 1024px) {

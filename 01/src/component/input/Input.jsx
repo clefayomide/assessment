@@ -9,7 +9,7 @@ const Input = ({ placeholder, setValue, value, className, inputClassName }) => {
 	const { searchResult } = useContext(AppContext);
 	return (
 		<section className={`app-input-container ${classnames(className)}`}>
-			<div>
+			<div className="app-input-search-result-container">
 				<input
 					className={`app-input ${classnames(inputClassName)}`}
 					placeholder={placeholder}
