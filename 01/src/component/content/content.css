@@ -1,0 +1,32 @@
+.app-content-container {
+	width: 100%;
+	margin-top: 2px;
+	background-color: white;
+	border-radius: 8px;
+	height: fit-content;
+	height: fit-content;
+}
+
+.app-content-list {
+	padding: 20px;
+	list-style: none;
+	border: 0.5px solid rgb(226, 224, 224);
+	max-height: 300px;
+
+	overflow-y: scroll;
+}
+
+.app-content-list-item {
+	padding: 10px 5px 10px 5px;
+	border-bottom: 0.5px solid rgb(226, 224, 224);
+}
+
+.app-content-list-item:last-child {
+	border-bottom: none;
+}
+
+.app-content-footer {
+	width: 100%;
+	height: 50px;
+	background-color: white;
+}

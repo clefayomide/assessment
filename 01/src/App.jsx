@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useContext, useEffect, useState } from "react";
+import "./App.css";
+import { AppInput } from "./component";
+import AppContext from "./context/app-context";
+import { FILTER_DATA, RESET_DATA } from "./context/app-action";
 
 function App() {
-  const [count, setCount] = useState(0)
+	const [searchQuery, setSearchQuery] = useState("");
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+	const { dispatch } = useContext(AppContext);
+
+	// inorder to isolate the business logic from the component, i decided to place the useEffect in the page using the component (parent), this is a seperation of concern technique in react and making sure the component has no side effect
+	useEffect(() => {
+		if (searchQuery) {
+			return dispatch({ type: FILTER_DATA, payload: searchQuery });
+		}
+		dispatch({ type: RESET_DATA, payload: searchQuery });
+	}, [searchQuery]);
+
+	return (
+		<main className="app-main-wrapper">
+			<AppInput
+				className={"app-search-input-container"}
+				inputClassName={"app-search-input"}
+				value={searchQuery}
+				setValue={setSearchQuery}
+				placeholder={"Enter your search"}
+			/>
+		</main>
+	);
 }
 
-export default App
+export default App;
