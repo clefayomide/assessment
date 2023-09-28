@@ -73,17 +73,6 @@ const ImageCarousel = ({ images }) => {
 						setVisible(!visible);
 						imageRef.current.classList.toggle("blur");
 					}}
-					style={{
-						position: "absolute",
-						left: "47%",
-						top: "45%",
-						zIndex: "29",
-						color: "white",
-						background: "none",
-						border: "none",
-						outline: "none",
-						cursor: "pointer",
-					}}
 				>
 					{visible ? <EyeOpen /> : <EyeClose />}
 				</button>
