@@ -1,0 +1,15 @@
+.app-no-result-card {
+    width: 100%;
+	border: 0.5px solid rgb(226, 224, 224);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.not-found-icon {
+    width: 50px;
+    height: 50px;
+    color: #f3b4ef;
+}

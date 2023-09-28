@@ -1,0 +1,22 @@
+.app-main-wrapper {
+	background-color: #fff1fe;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	/* justify-content: center; */
+	flex-direction: column;
+	/* align-items: center; */
+	letter-spacing: 1px;
+	padding: 20px;
+}
+
+@media all and (min-width: 1024px) {
+	.app-search-input-container {
+		width: 50%;
+	}
+
+	.app-main-wrapper {
+		/* justify-content: center; */
+		align-items: center;
+	}
+}
